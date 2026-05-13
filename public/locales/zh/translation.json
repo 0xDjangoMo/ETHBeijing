@@ -5,7 +5,12 @@
   },
   "hero": {
     "apply-to-hack": "点击报名",
-    "join-community": "加入选手交流群"
+    "join-community": "加入选手交流群",
+    "match-time": "比赛时间",
+    "match-date": "2026年6月5日-6月7日",
+    "registration-time": "报名时间",
+    "registration-date": "2026年6月5日-6月7日"
+
   },
   "intro": {
     "title": "ETH Beijing 黑客松",

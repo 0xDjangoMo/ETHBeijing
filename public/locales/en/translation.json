@@ -5,7 +5,11 @@
   },
   "hero": {
     "apply-to-hack": "Registration",
-    "join-community": "Join Community"
+    "join-community": "Join Community",
+    "match-time": "Hackathon Time",
+    "match-date": "June 5 – June 7, 2026",
+    "registration-time": "Registration Time",
+    "registration-date": "May 13 - June 1, 2026"
   },
   "intro": {
     "title": "ETH Beijing Hackathon",
