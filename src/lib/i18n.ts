@@ -1,12 +1,8 @@
 import i18next from "i18next";
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const localesDir = path.join(__dirname, "../../public/locales");
+const localesDir = path.resolve(process.cwd(), "public", "locales");
 
 function loadResources() {
   const en = JSON.parse(fs.readFileSync(path.join(localesDir, "en/translation.json"), "utf-8"));
