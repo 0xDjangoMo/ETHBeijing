@@ -12,11 +12,11 @@ import Faq from "../../components/Faq.astro";
 import Partners from "../../components/Partners.astro";
 import Footer from "../../components/Footer.astro";
 import Media from "../../components/Media.astro";
-import i18next, { t, changeLanguage } from "i18next";
+import { ensureI18n } from "../../lib/i18n";
 import Venue from "../../components/Venue.astro";
 import University from "../../components/University.astro";
 
-changeLanguage("zh");
+ensureI18n("zh");
 ---
 
 <Layout title="ETH Beijing">

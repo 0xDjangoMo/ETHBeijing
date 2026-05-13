@@ -5,9 +5,9 @@ import astroI18next from "astro-i18next";
 import react from "@astrojs/react";
 
 // https://astro.build/config
-import tailwind from "@astrojs/tailwind";
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), astroI18next()],
+  server: {
+    port: 3000,
+  },
+  integrations: [react(), astroI18next()],
 });

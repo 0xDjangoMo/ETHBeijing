@@ -1,5 +1,5 @@
 ---
-import { t } from "i18next";
+import i18next from "i18next";
 
 const cardData = [
   {
@@ -106,7 +106,7 @@ const cardData = [
 ---
 
 <section class="container">
-  <div id="media" class="title">{t("university.title")}</div>
+  <div id="media" class="title">{i18next.t("university.title")}</div>
   <div class="flex flex-wrap justify-center gap-5 mt-[60px] mb-[200px]">
     {
       cardData.map((item) => {

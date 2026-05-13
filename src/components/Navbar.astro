@@ -4,6 +4,7 @@ import "../styles/navbar.css";
 ---
 
 <script>
+  // @ts-nocheck
   const closeBtn: Element | any = document.querySelector(
     ".navbar-mb__btn .close"
   );
@@ -37,29 +38,29 @@ import "../styles/navbar.css";
 
   closeBtn.addEventListener("click", () => closeMobileNav);
 
-  menuBtn.forEach((ele: Element, index: number) => {
+  menuBtn.forEach((ele, index) => {
     if (!location.hash && !index) ele.classList.add("active");
 
     const hashIndex = hashArr.findIndex((val) => val === location.hash);
     if (index === hashIndex) ele.classList.add("active");
 
     ele.addEventListener("click", () => {
-      menuBtn.forEach((ele: Element) => ele.classList.remove("active"));
+      menuBtn.forEach((ele) => ele.classList.remove("active"));
       ele.classList.add("active");
     });
   });
 
-  menuMobileBtn.forEach((ele: Element, index: number) =>
+  menuMobileBtn.forEach((ele, index) =>
     ele.addEventListener("click", closeMobileNav)
   );
 
   // const lang: Element = document.getElementById("lan")!;
-  const lanList: Element = document.getElementById("lan-list")!;
-  const langMobile: Element | any = document.getElementById("languag-mb");
-  const lanListEN: Element = document.getElementById("lan-list-en")!;
-  const lanListZH: Element = document.getElementById("lan-list-zh")!;
+  const lanList = document.getElementById("lan-list");
+  const langMobile = document.getElementById("languag-mb");
+  const lanListEN = document.getElementById("lan-list-en");
+  const lanListZH = document.getElementById("lan-list-zh");
 
-  const lanCurrent: Element = document.getElementById("lan-current")!;
+  const lanCurrent = document.getElementById("lan-current");
   lanCurrent.addEventListener("click", () => {
     if (/ hidden/.test(lanList.classList.value)) {
       lanList.classList.remove("hidden");
@@ -94,7 +95,7 @@ import "../styles/navbar.css";
   //   }
   // });
 
-  langMobile.addEventListener("change", (e: any) => {
+  langMobile.addEventListener("change", (e) => {
     const { value = "english" } = e.target;
     const { origin, hash } = location;
 

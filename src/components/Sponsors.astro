@@ -1,5 +1,5 @@
 ---
-import i18next, { t } from "i18next";
+import i18next from "i18next";
 const cardData = [
   {
     img: "/images/sponsors/3.png",
@@ -35,7 +35,7 @@ const cardData = [
   <div class="title flex items-center gap-x-3 text-neutral-900">
     <img src="/images/heart.svg" height="35.76" width="33" />
     <span class="title"
-      >{t("sponsors.title")}</span
+      >{i18next.t("sponsors.title")}</span
     >
   </div>
   <div class="flex flex-wrap justify-center gap-5 mt-[60px] mb-[100px]">

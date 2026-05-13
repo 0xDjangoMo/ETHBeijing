@@ -1,14 +1,14 @@
 ---
-import { t } from "i18next";
+import i18next from "i18next";
 ---
 
 <section class="container">
-  <div id="venue" class="title">{t("venue.title")}</div>
+  <div id="venue" class="title">{i18next.t("venue.title")}</div>
 
   <img src="/images/img-venue.jpg" class="mt-[60px] w-[516px]" />
   <img src="/images/map.png" class="mt-[60px] w-[22px] mb-[16px]" />
-  <p class="venue-name mb-[16px]">{t("venue.name")}</p>
-  <p class="venue-address">{t("venue.address")}</p>
+  <p class="venue-name mb-[16px]">{i18next.t("venue.name")}</p>
+  <p class="venue-address">{i18next.t("venue.address")}</p>
 </section>
 
 <style>

@@ -4,7 +4,7 @@
     "description": "Embrace Web3 AI Era. Ignite Your Ideas at ETH Beijing Hackathon"
   },
   "hero": {
-    "apply-to-hack": "Apply to hack",
+    "apply-to-hack": "Registration",
     "join-community": "Join Community"
   },
   "intro": {
@@ -20,18 +20,13 @@
     "title": "Co-organization"
   },
   "generousPrize": {
-    "title": "Two Tracks. One Goal — Victory",
-    "prizePool": "Prize Pool",
+    "title": "AI agent",
+    "prizePool": "Prize Pool 9000 ¥",
     "cards": [
       {
-        "track": "Track 1",
-        "title": "Public Goods",
-        "description": "Build for the public good—create open-source solutions that make Ethereum better for everyone."
-      },
-      {
-        "track": "Track 2",
-        "title": "AI x Crypto",
-        "description": "Push the frontier—combine AI and blockchain to unlock powerful, innovative applications."
+        "track": "",
+        "title": "Prize",
+        "description": ""
       }
     ]
   },
@@ -44,9 +39,9 @@
   "schedule": {
     "title": "Schedule",
     "Hackathon": "Hackathon",
-    "time-1": "Fri, May 16",
-    "time-2": "Sat, May 17",
-    "time-3": "Sun, May 18",
+    "time-1": "Opening & Hackathon Begins",
+    "time-2": "Coding & Office Hours",
+    "time-3": "Demo Day & Awards",
     "open-ceremony": "Opening Ceremony",
     "schedule-1": "02:00pm",
     "topic-1": "Main Registration Opens!",
@@ -120,7 +115,7 @@
     "address": "1st Floor, Design Capital Building, Xicheng District, Beijing Kunlun Nest Humanoid Robot Laboratory "
   },
   "media": { "title": "Media" },
-  "university": { "title": "University & Community Support" },
+  "university": { "title": "University" },
   "judgesSpeakersMentors": {},
   "Footer": {},
   "Faq": {
