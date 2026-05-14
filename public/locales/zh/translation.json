@@ -9,7 +9,7 @@
     "match-time": "比赛时间",
     "match-date": "2026年6月5日-6月7日",
     "registration-time": "报名时间",
-    "registration-date": "2026年6月5日-6月7日"
+    "registration-date": "2026年5月14日-5月24日"
 
   },
   "intro": {
@@ -61,8 +61,8 @@
 
     "tab-1-time-1": "10:00 AM",
     "tab-1-title-1": "Main Registration Opens",
-    "tab-1-time-2": "12:00 PM",
-    "tab-1-title-2": "Lunch",
+    "tab-1-time-2": "1:30 PM",
+    "tab-1-title-2": "Registration",
     "tab-1-time-3": "2:15 PM",
     "tab-1-title-3": "Opening Ceremonies (15 min)",
     "tab-1-time-4": "2:30 PM",
@@ -105,7 +105,7 @@
   "venue": {
     "title": "场馆",
     "name": "昆仑巢",
-    "address": "北京市 · 西城区 · 北三环中路甲29号院 · 3号楼 · 设计之都大厦 · 一层"
+    "address": "北京融科资讯中心A座9层 · 昆仑巢"
   },
   "media": { "title": "媒体" },
   "community": { "title": "社区" },

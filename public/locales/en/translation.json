@@ -9,7 +9,7 @@
     "match-time": "Hackathon Time",
     "match-date": "June 5 – June 7, 2026",
     "registration-time": "Registration Time",
-    "registration-date": "May 13 - June 1, 2026"
+    "registration-date": "May 14 - May 24, 2026"
   },
   "intro": {
     "title": "ETH Beijing Hackathon",
@@ -60,8 +60,8 @@
 
     "tab-1-time-1": "10:00 AM",
     "tab-1-title-1": "Main Registration Opens",
-    "tab-1-time-2": "12:00 PM",
-    "tab-1-title-2": "Lunch",
+    "tab-1-time-2": "1:30 PM",
+    "tab-1-title-2": "Registration",
     "tab-1-time-3": "2:15 PM",
     "tab-1-title-3": "Opening Ceremonies (15 min)",
     "tab-1-time-4": "2:30 PM",
@@ -104,7 +104,7 @@
   "venue": {
     "title": "Venue",
     "name": "KUN LUN NEST",
-    "address": "1st Floor, Design Capital Building, Xicheng District, Beijing Kunlun Nest Humanoid Robot Laboratory "
+    "address": "1st Floor, Design Capital Building, Xicheng District, Beijing Kunlun Nest Humanoid Robot Laboratory"
   },
   "media": { "title": "Media" },
   "community": { "title": "Community" },
