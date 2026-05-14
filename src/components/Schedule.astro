@@ -2,9 +2,9 @@
 import i18next from "i18next";
 
 const scheduleData = {
-  tab1: 9,
-  tab2: 10,
-  tab3: 7,
+  tab1: 8,
+  tab2: 7,
+  tab3: 5,
 };
 ---
 
@@ -99,7 +99,7 @@ const scheduleData = {
       </div>
     </div>
     <div class="px-[40px] pt-[20px] border-t-[1px] border-grey-300">
-      <div class="flex items-center">
+      <!-- <div class="flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -117,7 +117,7 @@ const scheduleData = {
         <span class="text-neutral-600 text-sm leading-[17px]">
           {i18next.t("schedule.open-ceremony")}
         </span>
-      </div>
+      </div> -->
       <div id="tab1" class="tabcontent" style="display: block">
         {
           [...Array(scheduleData.tab1)].map(function (object, i) {
