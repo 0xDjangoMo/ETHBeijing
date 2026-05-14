@@ -1,14 +1,50 @@
 ---
-import i18next, { t } from "i18next";
+import i18next from "i18next";
 const cardData = [
   {
     img: "/images/dot-track1.png",
-    prizeImgs: ["1st", "2nd", "3rd"],
-  },
-  {
-    img: "/images/dot-track2.png",
-    prizeImgs: ["1st", "2nd", "3rd"],
-  },
+    prizes: [
+      {
+        rank: "1st",
+        amount: "10000 ¥",
+        accentClass: "bg-linear-to-r from-rose-500 to-pink-500 text-white",
+        amountClass: "bg-rose-50 text-rose-900 border-rose-100",
+      },
+      {
+        rank: "2nd",
+        amount: "5000 ¥",
+        accentClass: "bg-linear-to-r from-sky-500 to-blue-600 text-white",
+        amountClass: "bg-sky-50 text-sky-900 border-sky-100",
+      },
+      {
+        rank: "3rd",
+        amount: "3000 ¥",
+        accentClass: "bg-linear-to-r from-amber-400 to-orange-500 text-white",
+        amountClass: "bg-orange-50 text-orange-900 border-orange-100",
+      },
+    ],
+    specialAward: "1000 ¥",
+    specialPrizes: [
+      {
+        rank: "Public Good",
+        amount: "1000 ¥",
+        accentClass: "bg-linear-to-r from-green-400 to-emerald-500 text-white",
+        amountClass: "bg-green-50 text-green-900 border-green-100",
+      },
+      {
+        rank: "Security / Risk Agent",
+        amount: "1000 ¥",
+        accentClass: "bg-linear-to-r from-green-400 to-emerald-500 text-white",
+        amountClass: "bg-green-50 text-green-900 border-green-100",
+      },
+      {
+        rank: "AI for Transparency",
+        amount: "1000 ¥",
+        accentClass: "bg-linear-to-r from-green-400 to-emerald-500 text-white",
+        amountClass: "bg-green-50 text-green-900 border-green-100",
+      },
+    ],
+  }
 ];
 ---
 
@@ -16,44 +52,72 @@ const cardData = [
   <div id="prize" class="anchor"></div>
   <!-- <div class="bg"></div> -->
   <h1 class="font-bold text-4xl leading-[44px] h-[44px] mb-[60px]">
-    {t("generousPrize.title")}
+    {i18next.t("generousPrize.title")}
   </h1>
   <div class="title flex items-center gap-x-1 text-neutral-900">
     <img src="/images/union.svg" height="17.6" />
     <span class="text-neutral-900 text-lg font-semibold"
-      >{t("generousPrize.prizePool")}</span
+      >{i18next.t("generousPrize.prizePool")}</span
     >
   </div>
-  <img class="mb-[44px]" src="/images/prize-poll.png" width="267px" />
   <img class="h-[10px] mb-[44px]" src="/images/Vector (Stroke).svg" />
   <div class="flex flex-col items-center gap-[40px]">
     {
       cardData.map((item, idx) => {
         return (
           <div class="flex lg:items-center max-lg:flex-col">
-            <div class="flex items-center lg:pr-[56px] max-lg:pb-[30px] sm:justify-start justify-center">
+            {/* <div class="flex items-center lg:pr-[56px] max-lg:pb-[30px] sm:justify-start justify-center">
               <img class="h-[24px] w-[24px] " src={item.img} />
               <h1 class="text-black font-semibold text-[24px] leading-[29px] w-[100px] pl-[10px]">
-                {t(`generousPrize.cards.${idx}.track`)}
+                {i18next.t(`generousPrize.cards.${idx}.track`)}
               </h1>
-            </div>
+            </div> */}
 
-            <div class="pb-[40px] sm:w-[600px] card_box">
+            <div class="flex flex-col items-start rounded-[10px] border border-gray-300 bg-white px-[40px] py-[30px] shadow-[0px_2px_12px_rgba(0,0,0,0.06)] pb-[40px] sm:w-[600px]">
               <div>
                 <h1 class="text-black font-semibold text-[18px] leading-[34px] pb-[16px] sm:text-left text-center">
-                  {t(`generousPrize.cards.${idx}.title`)}
+                  {i18next.t(`generousPrize.cards.${idx}.title`)}
                 </h1>
-                <div class="flex items-center pb-[40px]">
+                {/* <div class="flex items-center pb-[40px]">
                   <img class="h-[15px] pr-[10px]" src="/images/info.png" />
                   <span class="text-neutral-900 text-base leading-[19px] ">
-                    {t(`generousPrize.cards.${idx}.description`)}
+                    {i18next.t(`generousPrize.cards.${idx}.description`)}
                   </span>
+                </div> */}
+                <div class="flex items-start sm:items-center sm:gap-x-[12px] sm:flex-row max-lg:flex-col max-lg:gap-y-[12px]">
+                  <p class="min-w-[72px] pt-[2px] text-xs font-medium tracking-[0.08em] text-gray-500">Prize</p>
+                  <div class="flex flex-wrap gap-3 justify-start">
+                    {item.prizes.map((prize) => {
+                      return (
+                        <div class={`inline-flex overflow-hidden rounded-[10px] border shadow-[0px_1px_4px_rgba(244,63,94,0.12)] ${prize.amountClass}`}>
+                          <span class={`px-4 py-2 text-sm font-semibold ${prize.accentClass}`}>
+                            {prize.rank}
+                          </span>
+                          <span class="px-4 py-2 text-sm font-semibold">
+                            {prize.amount}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div class="flex items-center sm:gap-x-[12px] sm:flex-row max-lg:flex-col max-lg:gap-y-[12px]">
-                  <p class="text-gray-600 text-xs ">Prize: </p>
-                  {item.prizeImgs.map((img) => {
-                    return <img class="h-[34px]" src={`/images/${img}.png`} />;
-                  })}
+                
+                <div class="mt-4 flex items-start sm:items-center sm:gap-x-[12px] sm:flex-row max-lg:flex-col max-lg:gap-y-[12px]">
+                  <p class="min-w-[72px] pt-[2px] text-xs font-medium tracking-[0.08em] text-gray-500">Special award</p>
+                  <div class="flex flex-wrap gap-2 justify-start">
+                    {item.specialPrizes.map((prize) => {
+                      return (
+                        <div class={`inline-flex overflow-hidden rounded-[10px] border shadow-[0px_1px_4px_rgba(244,63,94,0.12)] ${prize.amountClass}`}>
+                          <span class={`px-4 py-2 text-sm font-semibold ${prize.accentClass}`}>
+                            {prize.rank}
+                          </span>
+                          <span class="px-4 py-2 text-sm font-semibold">
+                            {prize.amount}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,30 +132,3 @@ const cardData = [
     src="/images/bg-ele-2.png"
   />
 </section>
-<style>
-  .card_box {
-    /* Frame 15 */
-
-    box-sizing: border-box;
-
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 30px 40px;
-
-    background: #ffffff;
-    /* gray/400 */
-
-    border: 0.5px solid #9ca3af;
-    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.06);
-    border-radius: 10px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-  }
-</style>

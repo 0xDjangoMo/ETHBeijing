@@ -1,51 +1,51 @@
 ---
-import i18next, { t } from "i18next";
+import i18next from "i18next";
 import "../styles/hero.css";
 ---
 
 <div
-  class="h-[580px] mt-[64px] mb-[120px] flex justify-center items-center bg-white relative isolate mx-auto sm:bg-[url(/images/banner.png)] bg-[url(/images/banner.png)] bg-no-repeat bg-cover bg-top"
+  class="h-[780px] mt-[64px] mb-[120px] flex justify-center items-center bg-white relative isolate mx-auto sm:bg-[url(/images/banner.png)] bg-[url(/images/banner.png)] bg-no-repeat bg-cover bg-top"
 >
   <div
-    class="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"
+    class="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black/50 bg-fixed"
   >
   </div>
   <div id="hero" class="anchor -mt-[504px]"></div>
   <div class="relative z-10 container flex flex-col justify-center items-center">
-    <img
+    <!-- <img
       src="/images/eth-title.png"
       alt=""
       class="h-[35px] mb-[40px] sm:h-[80px] sm:mb-6 sm:mt-[26px] m-auto block inset-0 -z-10 sm:object-cover object-contain object-right md:object-center"
-    />
+    /> -->
     <div
       class="flex justify-between max-sm:flex-col max-sm:items-center sm:w-[416px] mb-[40px]"
     >
       <a
-        href="https://docs.google.com/forms/d/1n6nqOqfRD5WwFYeK4xC0rcZ5al0YO_P-DfxIsRZnDV8"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSf-HRixV5YZx6YTa9t1gaxJHQVEtxI1xjJoh2e-YYB_HHGEJQ/viewform"
         target="_blank"
         class="hero-apply__btn w-[200px] h-[48px] leading-[48px] mt-[40px] mb-[40px] sm:mb-[26px] text-center block max-sm:mr-0 max-sm:my-[12px]"
       >
-        {t("hero.apply-to-hack")}
+        {i18next.t("hero.apply-to-hack")}
       </a>
       <a
         href="https://discord.com/invite/cGYBRVTYEY"
         target="_blank"
         class="hero-apply__btn w-[200px] h-[48px] leading-[48px] mt-[40px] mb-[40px] sm:mb-[26px] text-center block max-sm:my-[12px]"
       >
-        {t("hero.join-community")}</a
+        {i18next.t("hero.join-community")}</a
       >
     </div>
     <div
       class="flex flex-wrap sm:flex-nowrap justify-between max-sm:flex-col max-sm:items-center sm:w-[656px]"
     >
-      <img
-        src="/images/reg-time.png"
-        class="w-[250px] sm:w-[320px] sm:h-[90px] inset-0 -z-10 h-full object-cover object-right sm:object-center"
-      />
-      <img
-        src="/images/hack-time.png"
-        class="w-[250px] sm:w-[320px] sm:h-[90px] inset-0 -z-10 h-full max-sm:mt-4 object-cover object-right sm:object-center"
-      />
+      <div class="min-w-[250px] sm:w-[320px] sm:h-[90px] inset-0 bg-black/40 backdrop-blur-md rounded-lg text-white py-4 px-4 flex flex-col justify-between">
+        <span class="text-sm text-white/70">{i18next.t("hero.match-time")}</span>
+        <p class="text-2xl font-semibold">{i18next.t("hero.match-date")}</p>
+      </div>
+      <div class="min-w-[250px] sm:w-[320px] sm:h-[90px] inset-0 bg-black/40 backdrop-blur-md rounded-lg text-white py-4 px-4 flex flex-col justify-between">
+        <span class="text-sm text-white/70">{i18next.t("hero.registration-time")}</span>
+        <p class="text-2xl font-semibold">{i18next.t("hero.registration-date")}</p>
+      </div>
     </div>
   </div>
 </div>

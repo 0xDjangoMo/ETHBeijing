@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -82px;
+  visibility: hidden;
+}

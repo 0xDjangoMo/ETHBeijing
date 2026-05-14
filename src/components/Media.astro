@@ -1,15 +1,9 @@
 ---
-import { t } from "i18next";
+import i18next from "i18next";
 
 const cardData = [
   {
-    img: "/images/media/odaily.png",
-  },
-  {
-    img: "/images/media/blockbeats.jpeg",
-  },
-  {
-    img: "/images/media/tech-flow.png",
+    img: "/images/media/9.png",
   },
   {
     img: "/images/media/foresight-news.png",
@@ -20,18 +14,17 @@ const cardData = [
   {
     img: "/images/media/chaincatcher.png",
   },
-
-  // {
-  //   img: "/images/media/defi.png",
-  // },
-  // {
-  //   img: "/images/media/bbt.png",
-  // },
+  {
+    img: "/images/media/7.png",
+  },
+  {
+    img: "/images/media/8.png",
+  },
 ];
 ---
 
 <section class="container">
-  <div id="media" class="title">{t("media.title")}</div>
+  <div id="media" class="title">{i18next.t("media.title")}</div>
   <div class="flex flex-wrap justify-center gap-5 mt-[60px] mb-[200px]">
     {
       cardData.map((item) => {
