@@ -1,0 +1,1602 @@
+---
+import i18next from "i18next";
+
+const applyUrl = "https://docs.google.com/forms/d/1n6nqOqfRD5WwFYeK4xC0rcZ5al0YO_P-DfxIsRZnDV8";
+const communityUrl = "https://discord.com/invite/cGYBRVTYEY";
+
+const sponsorLogos = [
+  { label: "Sponsor 01", img: "/images/sponsors/3.png" },
+  { label: "Sponsor 02", img: "/images/sponsors/9.png" },
+  { label: "Sponsor 03", img: "/images/sponsors/8.png" },
+  { label: "Sponsor 04", img: "/images/sponsors/10.png" },
+  { label: "Sponsor 05", img: "/images/sponsors/1.png" },
+  { label: "Sponsor 06", img: "/images/sponsors/5.png" },
+  { label: "Sponsor 07", img: "/images/sponsors/7.png" },
+  { label: "Sponsor 08", img: "/images/sponsors/6.png" },
+  { label: "Sponsor 09", img: "/images/sponsors/11.png" },
+];
+
+const partnerLogos = [
+  { label: "Partner 01", img: "/images/partner/2.png" },
+  { label: "Partner 02", img: "/images/partner/3.png" },
+  { label: "Partner 03", img: "/images/partner/4.png" },
+];
+
+const mediaLogos = [
+  { label: "Odaily", img: "/images/media/odaily.png" },
+  { label: "BlockBeats", img: "/images/media/blockbeats.jpeg" },
+  { label: "TechFlow", img: "/images/media/tech-flow.png" },
+  { label: "Foresight News", img: "/images/media/foresight-news.png" },
+  { label: "PANews", img: "/images/media/PANews.png" },
+  { label: "ChainCatcher", img: "/images/media/chaincatcher.png" },
+];
+
+const universityLogos = [
+  { label: "PKU", img: "/images/university/pku.png" },
+  { label: "Tsinghua", img: "/images/university/qinghua.png" },
+  { label: "Zhejiang University", img: "/images/university/zhejiang.png" },
+  { label: "BHBA", img: "/images/university/bhba.png" },
+  { label: "CUFE", img: "/images/university/zhongcai.png" },
+  { label: "Blockchain Association", img: "/images/university/ba.png" },
+  { label: "Dongbei University", img: "/images/university/dongbei.png" },
+  { label: "PolyU", img: "/images/university/polyu.png" },
+  { label: "Fudan", img: "/images/university/fudan.png" },
+  { label: "SJTU", img: "/images/university/sjtu.png" },
+  { label: "Renmin", img: "/images/university/renmin.png" },
+  { label: "BUPT", img: "/images/university/beiyou.png" },
+  { label: "Shenzhen University", img: "/images/university/shenda.png" },
+  { label: "0xU", img: "/images/university/0xu.png" },
+  { label: "Guangzhou", img: "/images/university/guangzhou.png" },
+  { label: "CUHK", img: "/images/university/cuhk.png" },
+  { label: "Zhejiang Sci-Tech", img: "/images/university/zhejiangligong.png" },
+  { label: "Road to Devcon", img: "/images/community/roadtodevcon.png" },
+  { label: "XLink Labs", img: "/images/community/xlinklabs.png" },
+  { label: "LXDAO", img: "/images/community/lxdao.png" },
+  { label: "CUITBCA", img: "/images/community/cuitbca.png" },
+  { label: "OpenBuild", img: "/images/community/openbuild.png" },
+  { label: "Plancker", img: "/images/community/plancker.png" },
+  { label: "Beida Web3", img: "/images/community/beidaweb3.png" },
+  { label: "NKUBA", img: "/images/community/nkuba.jpg" },
+  { label: "DeFi HackLabs", img: "/images/community/defihacklasb.png" },
+  { label: "Community 01", img: "/images/community/1.png" },
+  { label: "Community 02", img: "/images/community/2.png" },
+  { label: "Community 03", img: "/images/community/3.png" },
+  { label: "Community 04", img: "/images/community/4.png" },
+  { label: "Community 05", img: "/images/community/5.png" },
+  { label: "Community 06", img: "/images/community/6.jpg" },
+];
+
+const copy = {
+  en: {
+    nav: ["Prize", "Track", "Schedule", "Venue", "Sponsors", "FAQ"],
+    apply: "Apply",
+    heroKicker: "v.2026 / Beijing / May 22-24",
+    titleA: "ETH",
+    titleB: "Beijing",
+    titleC: "'26",
+    subtitle: "// AI × Web3 · single track",
+    intro:
+      "A 48-hour in-person hackathon for builders exploring autonomous agents, verifiable inference, agent wallets, intent systems, on-chain reasoning, and crypto-native AI products.",
+    primary: "Apply to hack",
+    secondary: "Join community",
+    stats: [
+      ["Prize pool", "$5,000"],
+      ["Track", "AI × Web3"],
+      ["Winners", "Top 3"],
+      ["Window", "48 hours"],
+    ],
+    prizeEyebrow: "02 / Prize Pool",
+    prizeTitle: "Focused rewards for focused builds.",
+    prizeTitleEm: "// USD",
+    prizeBody:
+      "There is one main AI x Web3 track this year. The top three teams split the full $5,000 prize pool.",
+    pool: "Total pool",
+    winners: [
+      ["01", "First place", "Best overall AI × Web3 build", "$2,500"],
+      ["02", "Second place", "Technical excellence", "$1,500"],
+      ["03", "Third place", "Strong concept with shipped demo", "$1,000"],
+    ],
+    trackEyebrow: "03 / Track",
+    trackTitle: "Only AI × Web3.",
+    trackTitleEm: "// focus",
+    trackBody:
+      "No scattered categories this year. Every team builds in the same arena: AI systems that become more useful, trustworthy, or composable through Web3.",
+    ideas: [
+      "agent wallets",
+      "verifiable inference",
+      "zkML",
+      "intent solvers",
+      "on-chain RAG",
+      "model markets",
+      "data DAOs",
+      "autonomous protocols",
+    ],
+    scheduleEyebrow: "04 / Schedule",
+    scheduleTitle: "Three days, one build sprint.",
+    scheduleTitleEm: "// 48h hack window",
+    scheduleNote: "Details may adjust as workshops and mentors are confirmed.",
+    days: [
+      ["May 22", "Opening, workshops, team formation, hacking starts"],
+      ["May 23", "Mentor office hours, AI x Web3 sessions, mid-hack check-in"],
+      ["May 24", "Final submission, live demos, awards, after party"],
+    ],
+    venueEyebrow: "05 / Venue",
+    venueTitle: "Beijing, on site.",
+    venueTitleEm: "// 39.91° N",
+    venueName: "KUN LUN NEST",
+    venueBody:
+      "1F, Design Capital Building, Xicheng District, Beijing - Kunlun Nest Humanoid Robot Laboratory.",
+    supportersEyebrow: "06 / Sponsors & Partners",
+    supportersTitle: "Backers from last year.",
+    supportersTitleEm: "// inherited roster",
+    supportersBody:
+      "For now we are carrying over the 2025 sponsor, partner, media, university, and community materials while the 2026 roster is confirmed.",
+    sponsorsTitle: "Sponsors",
+    partnersTitle: "Partners",
+    mediaTitle: "Media",
+    universityTitle: "University & Community Support",
+    faqEyebrow: "07 / FAQ",
+    faqTitle: "FAQ",
+    faqTitleEm: "// common queries",
+    faqs: [
+      ["Who should apply?", "Developers, researchers, designers, and founders building at the intersection of AI and Web3."],
+      ["How many tracks are there?", "One. ETH Beijing 2026 is fully focused on AI x Web3."],
+      ["What is the prize split?", "The $5,000 pool is split across the top three teams: $2,500, $1,500, and $1,000."],
+      ["Can I join remotely?", "The hackathon is designed as an in-person Beijing event."],
+    ],
+    ctaTitle: "Bring the agentic web on-chain.",
+    ctaBody: "Applications are open. Bring a team, a stack, and a working idea worth testing in public.",
+    footer: "Hosted by PKU Blockchain DAO and WTF Academy.",
+  },
+  zh: {
+    nav: ["奖金", "赛道", "日程", "场地", "赞助", "问答"],
+    apply: "报名",
+    heroKicker: "v.2026 / 北京 / 5月22日-24日",
+    titleA: "ETH",
+    titleB: "Beijing",
+    titleC: "'26",
+    subtitle: "// AI × Web3 · 单一赛道",
+    intro:
+      "一场 48 小时线下黑客松，面向正在探索自主智能体、可验证推理、智能体钱包、意图系统、链上推理与加密原生 AI 产品的开发者。",
+    primary: "报名参赛",
+    secondary: "加入社区",
+    stats: [
+      ["总奖池", "$5,000"],
+      ["赛道", "AI × Web3"],
+      ["获奖", "前三名"],
+      ["窗口", "48 小时"],
+    ],
+    prizeEyebrow: "02 / 奖金池",
+    prizeTitle: "聚焦的赛道，清晰的奖励。",
+    prizeTitleEm: "// USD",
+    prizeBody:
+      "今年只设置一个 AI x Web3 主赛道。前三名队伍瓜分全部 $5,000 奖池。",
+    pool: "总奖池",
+    winners: [
+      ["01", "第一名", "最佳 AI × Web3 综合项目", "$2,500"],
+      ["02", "第二名", "技术卓越奖", "$1,500"],
+      ["03", "第三名", "完成度突出的可运行 demo", "$1,000"],
+    ],
+    trackEyebrow: "03 / 赛道",
+    trackTitle: "只有 AI × Web3。",
+    trackTitleEm: "// 专注",
+    trackBody:
+      "今年不再分散成多个类别。所有队伍都在同一个赛场构建：让 AI 系统因 Web3 变得更有用、更可信、更可组合。",
+    ideas: [
+      "智能体钱包",
+      "可验证推理",
+      "zkML",
+      "意图求解器",
+      "链上 RAG",
+      "模型市场",
+      "数据 DAO",
+      "自治协议",
+    ],
+    scheduleEyebrow: "04 / 日程",
+    scheduleTitle: "三天，一次完整构建冲刺。",
+    scheduleTitleEm: "// 48 小时极客窗口",
+    scheduleNote: "具体日程可能随工作坊与导师安排微调。",
+    days: [
+      ["5月22日", "开幕、工作坊、组队，正式开始 hacking"],
+      ["5月23日", "导师答疑、AI x Web3 分享、中期进度确认"],
+      ["5月24日", "最终提交、现场 demo、颁奖与 after party"],
+    ],
+    venueEyebrow: "05 / 场地",
+    venueTitle: "北京，线下见。",
+    venueTitleEm: "// 39.91° N",
+    venueName: "昆仑巢",
+    venueBody:
+      "北京市西城区设计之都大厦 1 层 - 昆仑巢人形机器人实验室。",
+    supportersEyebrow: "06 / 赞助商与合作伙伴",
+    supportersTitle: "沿用去年的支持阵容。",
+    supportersTitleEm: "// 待确认名单",
+    supportersBody:
+      "在 2026 阵容确认前，先沿用 2025 年的赞助商、合作伙伴、媒体、大学与社区支持素材。",
+    sponsorsTitle: "Sponsors",
+    partnersTitle: "Partners",
+    mediaTitle: "Media",
+    universityTitle: "University & Community Support",
+    faqEyebrow: "07 / 常见问题",
+    faqTitle: "常见问题",
+    faqTitleEm: "// FAQ",
+    faqs: [
+      ["谁适合报名？", "在 AI 与 Web3 交汇点构建的开发者、研究者、设计师与创业者。"],
+      ["今年有几个赛道？", "只有一个。ETH Beijing 2026 完全聚焦 AI x Web3。"],
+      ["奖金如何分配？", "$5,000 奖池分给前三名：$2,500、$1,500、$1,000。"],
+      ["可以远程参加吗？", "本次黑客松以北京线下参与为核心体验。"],
+    ],
+    ctaTitle: "把智能体网络带上链。",
+    ctaBody: "报名已开放。带上队伍、技术栈，以及一个值得现场验证的可运行想法。",
+    footer: "由 PKU Blockchain DAO 与 WTF Academy 联合主办。",
+  },
+};
+
+const lang = i18next.language === "zh" ? "zh" : "en";
+const c = copy[lang];
+const langHref = lang === "zh" ? "/" : "/zh/";
+const langLabel = lang === "zh" ? "EN" : "中文";
+---
+
+<div class="eb26" data-theme="light">
+  <nav class="eb26-nav" aria-label="Primary navigation">
+    <a class="eb26-brand" href="#hero" aria-label="ETH Beijing 2026">
+      <span class="eb26-live"></span>
+      <span>ETH//Beijing</span>
+      <span class="eb26-muted">2026</span>
+    </a>
+    <div class="eb26-nav-links">
+      {["prize", "track", "schedule", "venue", "supporters", "faq"].map((id, index) => (
+        <a href={`#${id}`}><span>0{index + 2}</span>{c.nav[index]}</a>
+      ))}
+    </div>
+    <div class="eb26-nav-actions">
+      <button class="eb26-theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+        <span class="eb26-theme-toggle__icon eb26-theme-toggle__icon--dark" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </span>
+        <span class="eb26-theme-toggle__icon eb26-theme-toggle__icon--light" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </span>
+      </button>
+      <a class="eb26-lang" href={langHref}>{langLabel}</a>
+      <a class="eb26-button eb26-button-primary" href={applyUrl} target="_blank" rel="noreferrer">{c.apply}</a>
+    </div>
+  </nav>
+
+  <header class="eb26-hero" id="hero">
+    <div class="eb26-hero-copy">
+      <p class="eb26-kicker">{c.heroKicker}</p>
+      <h1>
+        {c.titleA}<br />
+        {c.titleB}<br />
+        <span>{c.titleC}</span>
+      </h1>
+      <p class="eb26-subtitle">{c.subtitle}</p>
+      <p class="eb26-intro">{c.intro}</p>
+      <div class="eb26-cta-row">
+        <a class="eb26-button eb26-button-primary eb26-button-large" href={applyUrl} target="_blank" rel="noreferrer">{c.primary}</a>
+        <a class="eb26-button eb26-button-large" href={communityUrl} target="_blank" rel="noreferrer">{c.secondary}</a>
+      </div>
+      <div class="eb26-stats">
+        {c.stats.map(([label, value]) => (
+          <div>
+            <span>{label}</span>
+            <strong>{value}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="eb26-terminal" aria-label="AI x Web3 terminal preview">
+      <div class="eb26-terminal-bar">
+        <span></span><span></span><span></span>
+        <b>agent_manifest.json</b>
+      </div>
+      <pre><code><span class="prompt">$ </span><span class="cmd">ethbeijing init --year 2026</span>
+<span class="out">→ Resolving manifest...</span>
+<span class="out">→ Fetching </span><span class="key">/tracks</span>
+<span class="ok">✓ ai_x_web3</span><span class="out"> ............ active</span>
+<span class="out">→ Loading prize_pool ... </span><span class="ok">$5,000 USD</span>
+
+<span class="prompt">$ </span><span class="cmd">agent.spawn --role hacker</span>
+<span class="out">→ Booting model: </span><span class="str">"gpt-on-chain"</span>
+<span class="out">→ Memory: </span><span class="key">ipfs://0xbeijing</span>
+<span class="out">→ Wallet: </span><span class="key">0x...c0de</span>
+<span class="ok">✓ READY.</span>
+<span class="prompt">$ </span><span class="cmd">build --idea </span><span class="str">"&lt;your_idea&gt;"</span>
+
+<span class="cursor"></span></code></pre>
+    </div>
+  </header>
+
+  <main>
+    <section class="eb26-section eb26-prize" id="prize">
+      <div class="eb26-section-head">
+        <p class="eb26-kicker">{c.prizeEyebrow}</p>
+        <h2>{c.prizeTitle} <em>{c.prizeTitleEm}</em></h2>
+        <p>{c.prizeBody}</p>
+      </div>
+      <div class="eb26-prize-grid">
+        <div class="eb26-pool">
+          <span>{c.pool}</span>
+          <strong>$5,000</strong>
+        </div>
+        <div class="eb26-winners">
+          {c.winners.map(([rank, title, desc, amount]) => (
+            <article>
+              <span>{rank}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </div>
+              <strong>{amount}</strong>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="eb26-section eb26-track" id="track">
+      <div class="eb26-track-card">
+        <p class="eb26-kicker">{c.trackEyebrow}</p>
+        <h2>{c.trackTitle} <em>{c.trackTitleEm}</em></h2>
+        <p>{c.trackBody}</p>
+        <div class="eb26-chip-row">
+          {c.ideas.map((idea) => <span>{idea}</span>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="eb26-section eb26-schedule" id="schedule">
+      <div class="eb26-section-head">
+        <p class="eb26-kicker">{c.scheduleEyebrow}</p>
+        <h2>{c.scheduleTitle} <em>{c.scheduleTitleEm}</em></h2>
+        <p>{c.scheduleNote}</p>
+      </div>
+      <div class="eb26-days">
+        {c.days.map(([date, body], index) => (
+          <article>
+            <span>DAY 0{index + 1}</span>
+            <h3>{date}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="eb26-section eb26-venue" id="venue">
+      <div>
+        <p class="eb26-kicker">{c.venueEyebrow}</p>
+        <h2>{c.venueTitle} <em>{c.venueTitleEm}</em></h2>
+      </div>
+      <div class="eb26-venue-panel">
+        <div class="eb26-map">
+          <img src="/images/img-venue.jpg" alt={c.venueName} loading="lazy" />
+          <span></span>
+        </div>
+        <div>
+          <h3>{c.venueName}</h3>
+          <p>{c.venueBody}</p>
+          <small>39.9042 N / 116.4074 E</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="eb26-section eb26-supporters" id="supporters">
+      <div class="eb26-section-head">
+        <p class="eb26-kicker">{c.supportersEyebrow}</p>
+        <h2>{c.supportersTitle} <em>{c.supportersTitleEm}</em></h2>
+        <p>{c.supportersBody}</p>
+      </div>
+
+      <div class="eb26-supporters-stack">
+        <div class="eb26-logo-group">
+          <h3>{c.sponsorsTitle}</h3>
+          <div class="eb26-logo-grid eb26-logo-grid--sponsors">
+            {sponsorLogos.map((item) => (
+              <div class="eb26-logo-cell">
+                <img src={item.img} alt={item.label} loading="lazy" onload="this.parentElement.classList.add('has-logo')" onerror="this.remove()" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="eb26-logo-group">
+          <h3>{c.partnersTitle}</h3>
+          <div class="eb26-logo-grid eb26-logo-grid--partners">
+            {partnerLogos.map((item) => (
+              <div class="eb26-logo-cell">
+                <img src={item.img} alt={item.label} loading="lazy" onload="this.parentElement.classList.add('has-logo')" onerror="this.remove()" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="eb26-logo-group">
+          <h3>{c.mediaTitle}</h3>
+          <div class="eb26-logo-grid eb26-logo-grid--media">
+            {mediaLogos.map((item) => (
+              <div class="eb26-logo-cell">
+                <img src={item.img} alt={item.label} loading="lazy" onload="this.parentElement.classList.add('has-logo')" onerror="this.remove()" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="eb26-logo-group">
+          <h3>{c.universityTitle}</h3>
+          <div class="eb26-logo-grid eb26-logo-grid--university">
+            {universityLogos.map((item) => (
+              <div class="eb26-logo-cell eb26-logo-cell--small">
+                <img src={item.img} alt={item.label} loading="lazy" onload="this.parentElement.classList.add('has-logo')" onerror="this.remove()" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="eb26-section eb26-faq" id="faq">
+      <p class="eb26-kicker">{c.faqEyebrow}</p>
+      <h2>{c.faqTitle} <em>{c.faqTitleEm}</em></h2>
+      <div class="eb26-faq-list">
+        {c.faqs.map(([q, a], index) => (
+          <details open={index === 0}>
+            <summary><span>0{index + 1}</span>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="eb26-final">
+      <h2>{c.ctaTitle}</h2>
+      <p>{c.ctaBody}</p>
+      <a class="eb26-button eb26-button-primary eb26-button-large" href={applyUrl} target="_blank" rel="noreferrer">{c.primary}</a>
+    </section>
+  </main>
+
+  <footer class="eb26-footer">
+    <span>ETH//BJ '26</span>
+    <p>{c.footer}</p>
+  </footer>
+</div>
+
+<script>
+  const root = document.querySelector(".eb26");
+  const button = document.querySelector("[data-theme-toggle]");
+  const storageKey = "ethbeijing-theme";
+  const storedTheme = localStorage.getItem(storageKey);
+  const initialTheme = storedTheme === "dark" ? "dark" : "light";
+
+  const setTheme = (theme: string) => {
+    root?.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+    button?.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    localStorage.setItem(storageKey, theme);
+  };
+
+  setTheme(initialTheme);
+  button?.addEventListener("click", () => {
+    const nextTheme = root?.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+  });
+</script>
+
+<style>
+  :global(html) {
+    scroll-behavior: smooth;
+    background: oklch(0.985 0.003 250);
+  }
+
+  :global(body) {
+    margin: 0;
+    background: oklch(0.985 0.003 250);
+    color: oklch(0.18 0.012 250);
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    letter-spacing: 0.005em;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :global(html[data-theme="dark"]),
+  :global(html[data-theme="dark"] body) {
+    background: oklch(0.13 0.01 250);
+    color: oklch(0.96 0.005 250);
+  }
+
+  .eb26,
+  .eb26[data-theme="light"] {
+    --bg: oklch(0.985 0.003 250);
+    --bg-deep: oklch(0.97 0.004 250);
+    --bg-elev: oklch(0.965 0.004 250);
+    --bg-card: oklch(0.95 0.005 250);
+    --line: oklch(0.82 0.008 250);
+    --line-soft: oklch(0.9 0.006 250);
+    --fg: oklch(0.18 0.012 250);
+    --fg-mute: oklch(0.4 0.012 250);
+    --fg-dim: oklch(0.55 0.012 250);
+    --on-accent: oklch(0.13 0.01 250);
+    --grid-line: oklch(0 0 0 / 0.045);
+    --grid-line-strong: oklch(0 0 0 / 0.08);
+    --scan: oklch(0 0 0 / 0.018);
+    --topbar-bg: oklch(0.985 0.003 250 / 0.82);
+    --chip-bg: oklch(0 0 0 / 0.025);
+    --map-stripe: oklch(0 0 0 / 0.04);
+    --scan-blend: multiply;
+    --logo-cell-bg: oklch(0.965 0.004 250);
+    --logo-filter: saturate(0.85) brightness(0.98) contrast(0.95);
+    --logo-filter-hover: saturate(1) brightness(1) contrast(1);
+    --accent: oklch(0.62 0.16 145);
+    --accent-soft: oklch(0.62 0.16 145 / 0.13);
+    --accent-line: oklch(0.62 0.16 145 / 0.45);
+    --warn: oklch(0.85 0.16 85);
+    --gold: oklch(0.85 0.13 85);
+    --silver: oklch(0.78 0.01 250);
+    --bronze: oklch(0.7 0.11 50);
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --radius: 4px;
+    --radius-lg: 10px;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--mono);
+  }
+
+  .eb26[data-theme="dark"] {
+    --bg: oklch(0.13 0.01 250);
+    --bg-deep: oklch(0.1 0.008 250);
+    --bg-elev: oklch(0.16 0.012 250);
+    --bg-card: oklch(0.18 0.013 250);
+    --line: oklch(0.28 0.015 250);
+    --line-soft: oklch(0.22 0.013 250);
+    --fg: oklch(0.96 0.005 250);
+    --fg-mute: oklch(0.82 0.01 250);
+    --fg-dim: oklch(0.65 0.012 250);
+    --on-accent: oklch(0.13 0.01 250);
+    --grid-line: oklch(1 0 0 / 0.025);
+    --grid-line-strong: oklch(1 0 0 / 0.05);
+    --scan: oklch(1 0 0 / 0.012);
+    --topbar-bg: oklch(0.13 0.01 250 / 0.78);
+    --chip-bg: oklch(1 0 0 / 0.02);
+    --map-stripe: oklch(1 0 0 / 0.02);
+    --scan-blend: overlay;
+    --logo-cell-bg: oklch(0.18 0.013 250);
+    --logo-filter: invert(1) hue-rotate(180deg) saturate(0.82) brightness(1.02) contrast(0.92);
+    --logo-filter-hover: invert(1) hue-rotate(180deg) saturate(1) brightness(1.08) contrast(1);
+    --accent: oklch(0.82 0.17 145);
+    --accent-soft: oklch(0.82 0.17 145 / 0.14);
+    --accent-line: oklch(0.82 0.17 145 / 0.42);
+  }
+
+  .eb26::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: 1;
+    mask-image: radial-gradient(ellipse at top, black 35%, transparent 80%);
+  }
+
+  .eb26::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      var(--scan) 2px,
+      var(--scan) 3px
+    );
+    mix-blend-mode: var(--scan-blend);
+  }
+
+  .eb26 > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .eb26-nav {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 56px;
+    padding: 0 clamp(20px, 4vw, 48px);
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--topbar-bg);
+    backdrop-filter: blur(14px);
+  }
+
+  .eb26 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .eb26-brand,
+  .eb26-nav-links,
+  .eb26-nav-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .eb26-brand {
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .eb26-live {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    animation: eb26-pulse 1.6s ease-in-out infinite;
+  }
+
+  .eb26-muted {
+    color: var(--fg-dim);
+  }
+
+  .eb26-nav-links {
+    gap: 22px;
+    color: var(--fg-mute);
+    font-size: 12px;
+  }
+
+  .eb26-nav-links a {
+    display: inline-flex;
+    gap: 7px;
+  }
+
+  .eb26-nav-links span {
+    color: var(--fg-dim);
+    font-size: 10px;
+  }
+
+  .eb26-nav-links a:hover,
+  .eb26-lang:hover {
+    color: var(--accent);
+  }
+
+  .eb26-nav-actions {
+    gap: 10px;
+  }
+
+  .eb26-theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--bg-elev);
+    color: var(--fg-mute);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .eb26-theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .eb26-theme-toggle__icon {
+    display: none;
+  }
+
+  .eb26[data-theme="light"] .eb26-theme-toggle__icon--dark,
+  .eb26[data-theme="dark"] .eb26-theme-toggle__icon--light {
+    display: inline-flex;
+  }
+
+  .eb26-lang {
+    color: var(--fg-mute);
+    font-size: 12px;
+  }
+
+  .eb26-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--fg);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+
+  .eb26-button:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .eb26-button-primary {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: 600;
+  }
+
+  .eb26-button-primary:hover {
+    background: transparent;
+    box-shadow: 0 0 24px var(--accent-soft);
+  }
+
+  .eb26-button-large {
+    min-height: 48px;
+    padding: 0 24px;
+  }
+
+  .eb26-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    min-height: calc(100vh - 56px);
+    border-bottom: 1px solid var(--line-soft);
+    overflow: hidden;
+  }
+
+  .eb26-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 48px 48px;
+    border-right: 1px solid var(--line-soft);
+    position: relative;
+  }
+
+  .eb26-kicker {
+    margin: 0 0 16px;
+    color: var(--fg-dim);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .eb26 h1,
+  .eb26 h2,
+  .eb26 h3,
+  .eb26 p {
+    margin-top: 0;
+  }
+
+  .eb26 h1 {
+    max-width: 760px;
+    margin: 48px 0 0;
+    font-family: var(--display);
+    font-size: clamp(56px, 8.4vw, 128px);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+  }
+
+  .eb26 h1 span {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .eb26-subtitle {
+    display: block;
+    margin: 28px 0 0;
+    color: var(--fg-mute);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .eb26-intro {
+    max-width: 460px;
+    margin: 18px 0 0;
+    color: var(--fg-mute);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .eb26-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+
+  .eb26-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 56px;
+    border: 1px solid var(--line-soft);
+    background: var(--line-soft);
+  }
+
+  .eb26-stats div {
+    padding: 18px 16px;
+    border-right: 0;
+    background: var(--bg);
+  }
+
+  .eb26-stats span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--fg-dim);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .eb26-stats strong {
+    color: var(--fg);
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .eb26-terminal {
+    position: relative;
+    align-self: stretch;
+    margin: 32px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg-deep);
+    box-shadow: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eb26-hero > .eb26-terminal {
+    min-height: auto;
+  }
+
+  .eb26-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 48%;
+    background: var(--bg-deep);
+    z-index: -1;
+  }
+
+  .eb26-terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 36px;
+    padding: 0 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--fg-dim);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .eb26-terminal-bar span {
+    width: 9px;
+    height: 9px;
+    border-radius: 99px;
+    background: var(--line);
+  }
+
+  .eb26-terminal-bar b {
+    margin-left: auto;
+    font-weight: 500;
+  }
+
+  .eb26-terminal pre {
+    flex: 1;
+    margin: 0;
+    padding: 16px 18px;
+    color: var(--fg-mute);
+    font-size: 12.5px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;
+  }
+
+  .prompt,
+  .ok {
+    color: var(--accent);
+  }
+
+  .cmd {
+    color: var(--fg);
+  }
+
+  .out {
+    color: var(--fg-mute);
+  }
+
+  .key {
+    color: var(--gold);
+  }
+
+  .str {
+    color: oklch(0.78 0.1 30);
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 9px;
+    height: 16px;
+    background: var(--accent);
+    vertical-align: -2px;
+    animation: eb26-blink 1s steps(2, start) infinite;
+  }
+
+  .eb26-section {
+    padding: 96px clamp(24px, 5vw, 72px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .eb26-section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+    gap: 40px;
+    align-items: end;
+    max-width: 1280px;
+    margin: 0 auto 56px;
+  }
+
+  .eb26-section-head .eb26-kicker {
+    grid-column: 1 / -1;
+    margin-bottom: -20px;
+  }
+
+  .eb26 h2 {
+    margin-bottom: 0;
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+
+  .eb26 h2 em {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.65em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    vertical-align: 0.15em;
+  }
+
+  .eb26-section-head p:last-child,
+  .eb26-track-card p,
+  .eb26-venue-panel p,
+  .eb26-final p {
+    color: var(--fg-mute);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .eb26-prize-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+    gap: 64px;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .eb26-pool,
+  .eb26-winners article,
+  .eb26-track-card,
+  .eb26-days article,
+  .eb26-venue-panel,
+  .eb26-final {
+    border: 1px solid var(--line);
+    background: var(--bg-elev);
+    border-radius: var(--radius-lg);
+  }
+
+  .eb26-pool {
+    display: flex;
+    min-height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    background:
+      radial-gradient(circle at 24% 18%, var(--accent-soft), transparent 58%),
+      var(--bg-elev);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .eb26-pool::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+
+  .eb26-pool > * {
+    position: relative;
+  }
+
+  .eb26-pool span {
+    color: var(--fg-dim);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .eb26-pool strong {
+    color: var(--fg);
+    font-family: var(--display);
+    font-size: clamp(64px, 7vw, 88px);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .eb26-winners {
+    display: grid;
+    gap: 12px;
+  }
+
+  .eb26-winners article {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    padding: 24px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .eb26-winners article:hover {
+    border-color: var(--accent-line);
+    transform: translateX(4px);
+  }
+
+  .eb26-winners article > span {
+    color: var(--accent);
+    font-family: var(--display);
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .eb26-winners article:nth-child(2) > span {
+    color: var(--silver);
+  }
+
+  .eb26-winners article:nth-child(3) > span {
+    color: var(--bronze);
+  }
+
+  .eb26-winners h3 {
+    margin-bottom: 6px;
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .eb26-winners p {
+    margin-bottom: 0;
+    color: var(--fg-mute);
+    font-size: 12px;
+  }
+
+  .eb26-winners strong {
+    color: var(--fg);
+    font-family: var(--display);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .eb26-track {
+    padding-top: clamp(84px, 11vw, 148px);
+    padding-bottom: clamp(84px, 11vw, 148px);
+  }
+
+  .eb26-track-card {
+    position: relative;
+    overflow: hidden;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 36px;
+    border-color: var(--accent-line);
+    background:
+      radial-gradient(ellipse at top right, var(--accent-soft), transparent 70%),
+      var(--bg-elev);
+  }
+
+  .eb26-track-card::after {
+    content: "AI x WEB3";
+    position: absolute;
+    right: -0.08em;
+    bottom: -0.26em;
+    color: var(--grid-line-strong);
+    font-family: var(--display);
+    font-size: clamp(80px, 18vw, 240px);
+    letter-spacing: -0.08em;
+    pointer-events: none;
+  }
+
+  .eb26-track-card h2,
+  .eb26-track-card p,
+  .eb26-track-card .eb26-kicker,
+  .eb26-chip-row {
+    position: relative;
+    z-index: 1;
+  }
+
+  .eb26-track-card p {
+    max-width: 640px;
+    margin: 16px 0 22px;
+  }
+
+  .eb26-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 760px;
+  }
+
+  .eb26-chip-row span {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 5px 9px;
+    color: var(--fg-mute);
+    background: var(--chip-bg);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+  }
+
+  .eb26-chip-row span:nth-child(-n + 2) {
+    color: var(--accent);
+    border-color: var(--accent-line);
+  }
+
+  .eb26-days {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .eb26-days article {
+    padding: 26px;
+  }
+
+  .eb26-days span {
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+
+  .eb26-days h3 {
+    margin: 18px 0 12px;
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .eb26-days p {
+    margin-bottom: 0;
+    color: var(--fg-mute);
+    line-height: 1.65;
+  }
+
+  .eb26-venue {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+    gap: 36px;
+    align-items: start;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eb26-venue-panel {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1fr);
+    overflow: hidden;
+    background: var(--bg-elev);
+  }
+
+  .eb26-map {
+    position: relative;
+    min-height: 300px;
+    border-right: 1px solid var(--line);
+    background:
+      repeating-linear-gradient(45deg, transparent 0 14px, var(--map-stripe) 14px 15px),
+      repeating-linear-gradient(-45deg, transparent 0 14px, var(--map-stripe) 14px 15px),
+      var(--bg);
+    overflow: hidden;
+  }
+
+  .eb26-map img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(0.96) brightness(0.94);
+    opacity: 0.92;
+  }
+
+  .eb26[data-theme="light"] .eb26-map img {
+    filter: saturate(0.88) contrast(0.94) brightness(1.02);
+    opacity: 0.9;
+  }
+
+  .eb26-map span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 99px;
+    background: var(--accent);
+    box-shadow: 0 0 20px var(--accent);
+    transform: translate(-50%, -50%);
+  }
+
+  .eb26-venue-panel > div:last-child {
+    padding: 32px;
+  }
+
+  .eb26-venue h3 {
+    margin-bottom: 14px;
+    font-family: var(--display);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .eb26-venue small {
+    color: var(--fg-dim);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .eb26-supporters-stack {
+    display: grid;
+    gap: 52px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .eb26-logo-group h3 {
+    margin: 0 0 18px;
+    color: var(--fg);
+    font-family: var(--display);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .eb26-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--bg-elev);
+    overflow: hidden;
+  }
+
+  .eb26-logo-grid--sponsors {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .eb26-logo-grid--partners,
+  .eb26-logo-grid--media {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .eb26-logo-grid--university {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .eb26-logo-cell {
+    position: relative;
+    display: flex;
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    border-right: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+    background:
+      radial-gradient(circle at 50% 35%, var(--grid-line-strong), transparent 68%),
+      var(--logo-cell-bg);
+    color: var(--fg-dim);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 10.5px;
+  }
+
+  .eb26-logo-cell:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .eb26-logo-grid--university .eb26-logo-cell:nth-child(3n),
+  .eb26-logo-grid--media .eb26-logo-cell:nth-child(3n),
+  .eb26-logo-grid--partners .eb26-logo-cell:nth-child(3n) {
+    border-right: 1px solid var(--line-soft);
+  }
+
+  .eb26-logo-grid--partners .eb26-logo-cell:nth-child(3n),
+  .eb26-logo-grid--media .eb26-logo-cell:nth-child(3n),
+  .eb26-logo-grid--sponsors .eb26-logo-cell:nth-child(3n),
+  .eb26-logo-grid--university .eb26-logo-cell:nth-child(4n) {
+    border-right: 0;
+  }
+
+  .eb26-logo-cell img {
+    display: block;
+    max-width: min(170px, 82%);
+    max-height: 62px;
+    object-fit: contain;
+    filter: var(--logo-filter);
+    opacity: 0;
+    transition: filter 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  .eb26-logo-cell.has-logo img {
+    opacity: 0.9;
+  }
+
+  .eb26-logo-cell.has-logo:hover img {
+    filter: var(--logo-filter-hover);
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+
+  .eb26-logo-cell.has-logo span {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .eb26-logo-cell--small {
+    min-height: 128px;
+  }
+
+  .eb26-logo-cell--small img {
+    max-height: 74px;
+  }
+
+  .eb26-faq-list {
+    max-width: 1280px;
+    margin: 56px auto 0;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .eb26-faq details {
+    border-bottom: 1px solid var(--line-soft);
+    padding: 22px 0;
+  }
+
+  .eb26-faq summary {
+    display: flex;
+    gap: 24px;
+    cursor: pointer;
+    list-style: none;
+    color: var(--fg);
+    font-family: var(--display);
+    font-size: clamp(18px, 2.2vw, 28px);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  .eb26-faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .eb26-faq summary span {
+    color: var(--fg-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+
+  .eb26-faq details p {
+    max-width: 760px;
+    margin: 14px 0 0 56px;
+    color: var(--fg-mute);
+    line-height: 1.7;
+  }
+
+  .eb26-final {
+    margin: clamp(72px, 10vw, 128px) clamp(24px, 5vw, 72px);
+    padding: clamp(32px, 6vw, 72px);
+    background:
+      radial-gradient(circle at 80% 20%, var(--accent-soft), transparent 42%),
+      var(--bg-elev);
+  }
+
+  .eb26-final h2 {
+    max-width: 800px;
+    margin-bottom: 18px;
+  }
+
+  .eb26-final p {
+    max-width: 640px;
+    margin-bottom: 28px;
+  }
+
+  .eb26-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px clamp(24px, 5vw, 72px);
+    border-top: 1px solid var(--line);
+    color: var(--fg-dim);
+    font-size: 12px;
+  }
+
+  .eb26-footer p {
+    margin: 0;
+  }
+
+  @keyframes eb26-pulse {
+    50% {
+      opacity: 0.48;
+      transform: scale(0.76);
+    }
+  }
+
+  @keyframes eb26-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .eb26-nav-links {
+      display: none;
+    }
+
+    .eb26-hero,
+    .eb26-section-head,
+    .eb26-prize-grid,
+    .eb26-venue {
+      grid-template-columns: 1fr;
+    }
+
+    .eb26-hero-copy {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eb26-terminal {
+      min-height: 360px;
+    }
+
+    .eb26-days {
+      grid-template-columns: 1fr;
+    }
+
+    .eb26-logo-grid,
+    .eb26-logo-grid--sponsors,
+    .eb26-logo-grid--partners,
+    .eb26-logo-grid--media,
+    .eb26-logo-grid--university {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .eb26-logo-cell:nth-child(n) {
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .eb26-logo-cell:nth-child(2n) {
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .eb26-nav {
+      height: auto;
+      min-height: 64px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .eb26-brand {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .eb26-nav-actions {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .eb26-stats,
+    .eb26-winners article,
+    .eb26-venue-panel {
+      grid-template-columns: 1fr;
+    }
+
+    .eb26-stats div,
+    .eb26-map {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eb26-winners article {
+      gap: 12px;
+    }
+
+    .eb26-terminal {
+      margin: 18px;
+    }
+
+    .eb26-footer {
+      flex-direction: column;
+    }
+
+    .eb26-logo-grid,
+    .eb26-logo-grid--sponsors,
+    .eb26-logo-grid--partners,
+    .eb26-logo-grid--media,
+    .eb26-logo-grid--university {
+      grid-template-columns: 1fr;
+    }
+
+    .eb26-logo-cell:nth-child(n) {
+      border-right: 0;
+    }
+  }
+</style>
