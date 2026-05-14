@@ -25,7 +25,7 @@
   },
   "generousPrize": {
     "title": "AI Agent X Blockchain",
-    "prizePool": "Prize Pool 9000 ¥",
+    "prizePool": "Prize Pool 21,000 ¥",
     "cards": [
       {
         "track": "",
@@ -104,7 +104,7 @@
   "venue": {
     "title": "Venue",
     "name": "KUN LUN NEST",
-    "address": "1st Floor, Design Capital Building, Xicheng District, Beijing Kunlun Nest Humanoid Robot Laboratory"
+    "address": "Kunlun Nest, 9F, Tower A, Raycom Info Tech Park, Haidian District, Beijing, China"
   },
   "media": { "title": "Media" },
   "community": { "title": "Community" },
